@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if past %}
+        {% for thing in past %}
+            <strong>{{ thing.question }}</strong><br/><br/>
+            {{ thing.answer }}<br/><br/>
+            <a href="{% url 'delete_past' thing.id %}" class="btn btn-outline-secondary">Delete</a> <br/><hr/>
+
+            
+        {% endfor %}
+    {% endif %}
+{% endblock %}
